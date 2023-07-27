@@ -7,10 +7,13 @@ function Navbar() {
     setBurger(!burger);
   }
   return (
-    <div className="py-3 px-6 bg-yellow-400 drop-shadow-lg">
+    <div className="py-3 px-6 bg-yellow-400 drop-shadow-lg sm:px-12">
       <div className="max-w-5xl mx-auto sm:flex sm:justify-between sm:items-center">
         <div className="flex items-center justify-between">
-          <span className="text-4xl font-bagel text-yellow-950 -mt-1">
+          <span
+            className="text-2xl sm:text-4xl font-bagel text-yellow-950 -mt-1 cursor-pointer"
+            href="#"
+          >
             BiggE
           </span>
           {!burger && (
@@ -67,7 +70,7 @@ function Navbar() {
               Menu
             </a>
           </li>
-          <li>
+          <li className="py-1 ps-0.5">
             <a
               href="#"
               className=" text-yellow-950 font-semibold  hover:text-yellow-50"
@@ -76,15 +79,15 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <button className="bg-white rounded-full px-5 py-1.5 w-full space-x-2 hover:drop-shadow-sm hover:scale-105 transition duration-200 hover:ease-in-out sm:w-32">
-              <span className=" text-yellow-950 font-semibold">Cart</span>
+            <button className=" bg-yellow-50 rounded-full py-1.5 px-4 hover:drop-shadow-sm hover:scale-105 transition duration-200 hover:ease-in-out text-yellow-950 font-semibold">
+              Cart
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6 inline-block"
+                className="w-6 h-6 inline-block ms-2"
               >
                 <path
                   strokeLinecap="round"
@@ -101,7 +104,7 @@ function Navbar() {
             <li className="py-1 ps-0.5" onClick={changeBurger}>
               <a
                 href="#"
-                className=" text-yellow-950 font-semibold  hover:text-yellow-50"
+                className=" text-yellow-950 font-semibold hover:text-yellow-50"
               >
                 Home
               </a>
@@ -123,18 +126,15 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <button
-                className="bg-white rounded-full px-5 py-1.5 w-full space-x-2 hover:drop-shadow-sm hover:scale-105 transition duration-200 hover:ease-in-out sm:w-32"
-                onClick={changeBurger}
-              >
-                <span className=" text-yellow-950 font-semibold">Cart</span>
+              <button className=" bg-yellow-50 rounded-full py-1.5 px-4 hover:drop-shadow-sm hover:scale-105 transition duration-200 hover:ease-in-out text-yellow-950 font-semibold w-full">
+                Cart
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6 inline-block"
+                  className="w-6 h-6 inline-block ms-2"
                 >
                   <path
                     strokeLinecap="round"

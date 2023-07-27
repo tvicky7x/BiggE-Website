@@ -1,4 +1,4 @@
-import "./App.css";
+import HeroSection from "./Components/Hero/HeroSection";
 import Navbar from "./Components/Nav/Navbar";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
       <header>
         <Navbar />
       </header>
+      <HeroSection heroPrice={"299"} />
     </>
   );
 }
