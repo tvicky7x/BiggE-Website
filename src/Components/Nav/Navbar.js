@@ -9,7 +9,7 @@ function Navbar(props) {
     setBurger(!burger);
   }
   return (
-    <div className="py-4 px-6 bg-yellow-400 drop-shadow-lg sm:px-12 relative">
+    <div className="py-4 px-4 bg-yellow-400 drop-shadow-lg sm:px-12 relative">
       <div className="max-w-5xl mx-auto sm:flex sm:justify-between sm:items-center">
         <div className="flex items-center justify-between">
           <span

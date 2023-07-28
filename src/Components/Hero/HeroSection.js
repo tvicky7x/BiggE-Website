@@ -2,7 +2,7 @@ import React from "react";
 
 function HeroSection(props) {
   return (
-    <section className="px-6 py-8 bg-yellow-100 sm:px-12 sm:py-14" id="Home">
+    <section className="px-4 py-8 bg-yellow-100 sm:px-12 sm:py-14" id="Home">
       <div className=" max-w-5xl mx-auto sm:flex sm:justify-between">
         <div className="animate-heroBurger sm:order-2 sm:w-5/12 sm:flex">
           <img

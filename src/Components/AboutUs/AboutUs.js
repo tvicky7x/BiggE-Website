@@ -5,7 +5,7 @@ function AboutUs() {
   return (
     <Container id={"About Us"}>
       <div className=" flex justify-evenly items-center gap-5 flex-wrap">
-        <div className=" w-80 h-80 bg-yellow-300 p-3 drop-shadow-xl rounded-md hover:scale-105 transition duration-200 hover:ease-in-out">
+        <div className=" w-80 h-80 bg-yellow-500 p-2.5 drop-shadow-xl rounded-md hover:scale-105 transition duration-200 hover:ease-in-out">
           <img
             src="./Images/Burger Restaurant.jpg"
             alt=""
