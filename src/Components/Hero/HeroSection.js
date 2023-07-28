@@ -2,26 +2,27 @@ import React from "react";
 
 function HeroSection(props) {
   return (
-    <section className="py-10 px-6 bg-yellow-100 sm:px-12">
-      <div className="sm:flex max-w-5xl mx-auto justify-between">
-        <div className=" sm:order-2 sm:w-1/2 animate-heroBurger sm:flex">
+    <section className="px-6 py-8 bg-yellow-100 sm:px-12 sm:py-14" id="Home">
+      <div className=" max-w-5xl mx-auto sm:flex sm:justify-between">
+        <div className="animate-heroBurger sm:order-2 sm:w-5/12 sm:flex">
           <img
-            src="./Hero Hamburger-NoBackground.png"
+            src="./Images/Hero Hamburger-NoBackground.png"
             alt=""
-            className=" w-80 mx-auto  sm:max-w-none sm:w-full sm:self-center"
+            className=" w-64 mx-auto  sm:max-w-none sm:w-full sm:self-center"
           />
         </div>
-        <div className="max-w-sm sm:my-auto my-6 sm:max-w-md sm:me-3 animate-heroTitle">
+        <div className="mt-3 animate-heroTitle sm:max-w-md sm:me-3 sm:my-auto">
           <h1 className=" font-bagel text-5xl text-yellow-950 sm:text-6xl">
             Love Every Bite
           </h1>
-          <p className="text-lg mb-5 mt-3">
+          <p className="text-lg mb-7 mt-3">
             Get your hands on our special double cheese burger now
           </p>
-          <button className=" bg-yellow-900 py-1.5 px-4 rounded-full font-semibold text-yellow-50 hover:scale-105 hover:drop-shadow-lg">
-            Oder Now
+
+          <button className=" w-full sm:w-fit bg-yellow-900 py-2 sm:py-1.5 px-4 rounded-full font-semibold text-yellow-50 hover:scale-105 hover:drop-shadow-lg transition-all duration-200 hover:ease-in-out">
+            Oder Now <span className=" sm:hidden">- ₹ {props.heroPrice}</span>
           </button>
-          <span className=" text-yellow-950 font-semibold ps-3">
+          <span className=" text-yellow-950 font-bold ps-3 hidden sm:inline">
             ₹ {props.heroPrice}
           </span>
         </div>

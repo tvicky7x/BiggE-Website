@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import FullList from "./FullList";
+import SmallList from "./SmallList";
 
-function Navbar() {
+function Navbar(props) {
   const [burger, setBurger] = useState(false);
 
   function changeBurger() {
@@ -54,30 +56,9 @@ function Navbar() {
         </div>
         {/* Navbar for Full Screen */}
         <ul className=" hidden sm:flex sm:space-x-6 sm:items-center">
-          <li>
-            <a
-              href="#"
-              className=" text-yellow-950 font-semibold  hover:text-yellow-50"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className=" text-yellow-950 font-semibold  hover:text-yellow-50"
-            >
-              Menu
-            </a>
-          </li>
-          <li className="py-1 ps-0.5">
-            <a
-              href="#"
-              className=" text-yellow-950 font-semibold  hover:text-yellow-50"
-            >
-              Contact Us
-            </a>
-          </li>
+          {props.pages.map((item) => {
+            return <FullList ListName={item} key={item} />;
+          })}
           <li>
             <button className=" bg-yellow-50 rounded-full py-1.5 px-4 hover:drop-shadow-sm hover:scale-105 transition duration-200 hover:ease-in-out text-yellow-950 font-semibold">
               Cart
@@ -101,30 +82,11 @@ function Navbar() {
         {/* Navbar for Mobile screen */}
         {burger && (
           <ul className="space-y-2 sm:hidden mt-2">
-            <li className="py-1 ps-0.5" onClick={changeBurger}>
-              <a
-                href="#"
-                className=" text-yellow-950 font-semibold hover:text-yellow-50"
-              >
-                Home
-              </a>
-            </li>
-            <li className="py-1 ps-0.5" onClick={changeBurger}>
-              <a
-                href="#"
-                className=" text-yellow-950 font-semibold  hover:text-yellow-50"
-              >
-                Menu
-              </a>
-            </li>
-            <li className="py-1 ps-0.5" onClick={changeBurger}>
-              <a
-                href="#"
-                className=" text-yellow-950 font-semibold  hover:text-yellow-50"
-              >
-                Contact Us
-              </a>
-            </li>
+            {props.pages.map((item) => {
+              return (
+                <SmallList ListName={item} onClick={changeBurger} key={item} />
+              );
+            })}
             <li>
               <button className=" bg-yellow-50 rounded-full py-1.5 px-4 hover:drop-shadow-sm hover:scale-105 transition duration-200 hover:ease-in-out text-yellow-950 font-semibold w-full">
                 Cart

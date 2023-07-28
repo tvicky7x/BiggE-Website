@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         bagel: "Bagel Fat One",
+        nunito: "Nunito",
       },
       keyframes: {
         heroBurger: {
