@@ -8,7 +8,7 @@ function HeroSection(props) {
           <img
             src="./Images/Hero Hamburger-NoBackground.png"
             alt=""
-            className=" w-64 mx-auto  sm:max-w-none sm:w-full sm:self-center"
+            className=" w-64 mx-auto z-0 sm:max-w-none sm:w-full sm:self-center"
           />
         </div>
         <div className="mt-3 animate-heroTitle sm:max-w-md sm:me-3 sm:my-auto">
@@ -19,12 +19,9 @@ function HeroSection(props) {
             Get your hands on our special double cheese burger now
           </p>
 
-          <button className=" w-full sm:w-fit bg-yellow-900 py-2 sm:py-1.5 px-4 rounded-full font-semibold text-yellow-50 hover:scale-105 hover:drop-shadow-lg transition-all duration-200 hover:ease-in-out">
-            Oder Now <span className=" sm:hidden">- ₹ {props.heroPrice}</span>
+          <button className=" w-full sm:w-fit bg-yellow-900 py-2 px-4 rounded-full font-semibold text-yellow-50 hover:scale-105 hover:drop-shadow-xl transition-all duration-200 hover:ease-in-out">
+            Oder Now - ₹ {props.heroPrice}
           </button>
-          <span className=" text-yellow-950 font-bold ps-3 hidden sm:inline">
-            ₹ {props.heroPrice}
-          </span>
         </div>
       </div>
     </section>

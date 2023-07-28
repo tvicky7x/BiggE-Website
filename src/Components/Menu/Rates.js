@@ -6,7 +6,7 @@ function Rates() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
-      className="w-4 h-4 text-yellow-50 inline group-hover:text-red-600 transition duration-200 group-hover:ease-in-out"
+      className="w-4 h-4 text-yellow-400 inline group-hover:text-red-600"
     >
       <path
         fillRule="evenodd"

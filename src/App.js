@@ -1,3 +1,4 @@
+import AboutUs from "./Components/AboutUs/AboutUs";
 import HeroSection from "./Components/Hero/HeroSection";
 import Menu from "./Components/Menu/Menu";
 import Navbar from "./Components/Nav/Navbar";
@@ -49,6 +50,7 @@ function App() {
       </header>
       <HeroSection heroPrice={"299"} />
       <Menu data={FoodData} />
+      <AboutUs />
     </>
   );
 }
