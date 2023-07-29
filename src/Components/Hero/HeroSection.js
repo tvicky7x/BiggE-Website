@@ -8,7 +8,7 @@ function HeroSection(props) {
           <img
             src="./Images/Hero Hamburger-NoBackground.png"
             alt=""
-            className=" w-64 mx-auto z-0 sm:max-w-none sm:w-full sm:self-center"
+            className=" w-64 mx-auto sm:max-w-none sm:w-full sm:self-center"
           />
         </div>
         <div className="mt-3 animate-heroTitle sm:max-w-md sm:me-3 sm:my-auto">

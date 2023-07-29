@@ -5,12 +5,16 @@ function MenuBox(props) {
   const rate = new Array(props.data.dishRate).fill(true);
 
   return (
-    <div className="p-3 group hover:bg-yellow-200 rounded-b-3xl rounded-t-md hover:scale-105 transition duration-200 hover:ease-in-out">
+    <div className="p-2 sm:p-3 w-1/2 sm:w-1/3 md:w-1/4 group hover:bg-yellow-200 rounded-b-3xl rounded-t-md hover:scale-105 transition duration-200 hover:ease-in-out">
       <div className="pb-14 h-full relative">
-        <div className=" w-48 h-48 rounded-md overflow-hidden">
-          <img src={props.data.dishImage} alt="" />
+        <div className=" w-fit h-fit">
+          <img
+            src={props.data.dishImage}
+            alt={props.data.dishImage}
+            className=" rounded-md filter-none"
+          />
         </div>
-        <h3 className=" w-48 font-nunito text-xl font-extrabold text-yellow-950 text-center">
+        <h3 className=" w-full font-nunito text-xl font-extrabold text-yellow-950 text-center">
           {props.data.dishName}
         </h3>
         <div className=" space-x-1 -mt-1.5 text-center">

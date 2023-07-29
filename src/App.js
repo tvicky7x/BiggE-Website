@@ -1,4 +1,5 @@
 import AboutUs from "./Components/AboutUs/AboutUs";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import HeroSection from "./Components/Hero/HeroSection";
 import Menu from "./Components/Menu/Menu";
 import Navbar from "./Components/Nav/Navbar";
@@ -51,6 +52,7 @@ function App() {
       <HeroSection heroPrice={"299"} />
       <Menu data={FoodData} />
       <AboutUs />
+      <ContactUs />
     </>
   );
 }
