@@ -84,12 +84,10 @@ function App() {
   return (
     <>
       <div className={viewCart ? `h-screen overflow-hidden` : ""}>
-        <header>
-          <Navbar
-            pages={["Home", "Menu", "About Us", "Contact Us"]}
-            openViewCart={openViewCart}
-          />
-        </header>
+        <Navbar
+          pages={["Home", "Menu", "About Us", "Contact Us"]}
+          openViewCart={openViewCart}
+        />
         <HeroSection heroPrice={"299"} />
         <Menu
           data={foodData}
