@@ -29,6 +29,9 @@ module.exports = {
         heroBurger: "heroBurger 1s",
         heroTitle: "heroTitle 1s",
       },
+      width: {
+        128: "32rem",
+      },
     },
   },
   plugins: [],

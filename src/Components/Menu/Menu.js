@@ -14,8 +14,14 @@ function Menu(props) {
         </p>
         <div className="mt-4 sm:mt-6 flex flex-wrap justify-center">
           {props.data.map((item) => {
-            item.id = Math.floor(Math.random() * 100000).toString(36);
-            return <MenuBox data={item} key={item.id} />;
+            return (
+              <MenuBox
+                data={item}
+                key={item.id}
+                openViewCart={props.openViewCart}
+                addCartData={props.addCartData}
+              />
+            );
           })}
         </div>
       </Container>
