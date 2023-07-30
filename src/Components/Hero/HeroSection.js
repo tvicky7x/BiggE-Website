@@ -18,10 +18,11 @@ function HeroSection(props) {
           <p className="text-lg mb-7 mt-3">
             Get your hands on our special double cheese burger now
           </p>
-
-          <button className=" w-full sm:w-fit bg-yellow-900 py-2 px-4 rounded-full font-semibold text-yellow-50 hover:scale-105 hover:drop-shadow-xl transition-all duration-200 hover:ease-in-out">
-            Oder Now - ₹ {props.heroPrice}
-          </button>
+          <a href="#Menu">
+            <button className=" sm:w-40 w-full bg-yellow-900 py-2 px-4 rounded-full font-semibold text-yellow-50 hover:scale-105 hover:drop-shadow-xl transition-all duration-200 hover:ease-in-out">
+              Menu
+            </button>
+          </a>
         </div>
       </div>
     </section>

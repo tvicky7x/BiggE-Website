@@ -5,7 +5,7 @@ import CartList from "./CartList";
 
 function Cart(props) {
   const total = props.data.reduce(function (previousValue, currentValue) {
-    return previousValue + currentValue.dishPrice;
+    return previousValue + currentValue.dishPrice * currentValue.dishQuantity;
   }, 0);
   return (
     <>
@@ -80,7 +80,14 @@ function Cart(props) {
               <div className="mt-5">
                 <ul className=" divide-y-2">
                   {props.data.map((item) => {
-                    return <CartList data={item} key={item.id} />;
+                    return (
+                      <CartList
+                        data={item}
+                        key={item.id}
+                        removeCartData={props.removeCartData}
+                        changeQuantity={props.changeQuantity}
+                      />
+                    );
                   })}
                 </ul>
                 <div className="mt-10 border-t-2 border-yellow-500">

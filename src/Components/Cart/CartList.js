@@ -16,9 +16,13 @@ function CartList(props) {
           <p className="font-bold">₹ {props.data.dishPrice}</p>
         </div>
         <div className="p-1 w-full h-fit flex">
-          <p className=" text-yellow-950 font-medium">Qty :</p>
+          <p className=" text-yellow-950">Qty :</p>
           <div className="flex">
-            <div>
+            <div
+              onClick={() => {
+                props.changeQuantity(props.data.id, 1);
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -44,7 +48,11 @@ function CartList(props) {
                 min={1}
               />
             </div>
-            <div>
+            <div
+              onClick={() => {
+                props.changeQuantity(props.data.id, -1);
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -61,7 +69,12 @@ function CartList(props) {
               </svg>
             </div>
           </div>
-          <button className=" text-red-600 font-semibold text-lg ms-auto">
+          <button
+            className=" text-red-600 font-semibold text-lg ms-auto"
+            onClick={() => {
+              props.removeCartData(props.data.id);
+            }}
+          >
             Remove
           </button>
         </div>

@@ -81,6 +81,29 @@ function App() {
     setCartData(newCartData);
   }
 
+  function removeCartData(id) {
+    let newCartData = cartData.filter((item) => {
+      if (item.id === id) {
+        item.cart = false;
+      }
+      return item.id !== id;
+    });
+    setCartData(newCartData);
+  }
+
+  function changeQuantity(id, value) {
+    let newCartData = cartData.map((item) => {
+      if (item.id === id) {
+        let Quantity = item.dishQuantity + value;
+        if (Quantity > 0) {
+          item.dishQuantity = Quantity;
+        }
+      }
+      return item;
+    });
+    setCartData(newCartData);
+  }
+
   return (
     <>
       <div className={viewCart ? `h-screen overflow-hidden` : ""}>
@@ -97,7 +120,14 @@ function App() {
         <AboutUs />
         <ContactUs />
       </div>
-      {viewCart && <Cart closeViewCart={closeViewCart} data={cartData} />}
+      {viewCart && (
+        <Cart
+          closeViewCart={closeViewCart}
+          data={cartData}
+          removeCartData={removeCartData}
+          changeQuantity={changeQuantity}
+        />
+      )}
     </>
   );
 }
