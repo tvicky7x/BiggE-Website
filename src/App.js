@@ -5,6 +5,7 @@ import HeroSection from "./Components/Hero/HeroSection";
 import Menu from "./Components/Menu/Menu";
 import Navbar from "./Components/Nav/Navbar";
 import Cart from "./Components/Cart/Cart";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   let originalData = [
@@ -120,6 +121,7 @@ function App() {
         />
         <AboutUs />
         <ContactUs />
+        <Footer />
       </div>
       {viewCart && (
         <Cart
