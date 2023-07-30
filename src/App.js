@@ -110,6 +110,7 @@ function App() {
         <Navbar
           pages={["Home", "Menu", "About Us", "Contact Us"]}
           openViewCart={openViewCart}
+          cartData={cartData}
         />
         <HeroSection heroPrice={"299"} />
         <Menu
