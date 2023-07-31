@@ -5,7 +5,6 @@ function MenuBox(props) {
   const rate = new Array(props.data.dishRate).fill(true);
 
   function addedToCart(e) {
-    props.data.dishQuantity = 1;
     if (e.target.innerHTML !== "View Cart") {
       props.addCartData(props.data);
     } else {
