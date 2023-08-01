@@ -13,7 +13,7 @@ function HeroSection(props) {
         </div>
         <div className="mt-3 animate-heroTitle sm:max-w-md sm:me-3 sm:my-auto">
           <h1 className=" font-bagel text-5xl text-yellow-950 sm:text-6xl">
-            Love Every Bite
+            Loves Every Bite
           </h1>
           <p className="text-lg mb-7 mt-3">
             Get your hands on our special double cheese burger now
