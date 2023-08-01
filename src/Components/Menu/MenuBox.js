@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Rates from "./Rates";
+import appContext from "../../appcontext";
 
 function MenuBox(props) {
+  const context = useContext(appContext);
   const rate = new Array(props.data.dishRate).fill(true);
 
   function addedToCart(e) {
     if (e.target.innerHTML !== "View Cart") {
-      props.addCartData(props.data);
+      context.addToCart(props.data);
     } else {
-      props.openViewCart();
+      context.openViewCart();
     }
   }
 

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import appContext from "../../appcontext";
 
 function CartList(props) {
+  const context = useContext(appContext);
   return (
     <li className=" flex space-x-3">
       <div className=" shrink-0 flex p-1">
@@ -20,7 +22,7 @@ function CartList(props) {
           <div className="flex">
             <div
               onClick={() => {
-                props.changeQuantity(props.data.id, 1);
+                context.changeCartQuantity(props.data.id, 1);
               }}
             >
               <svg
@@ -50,7 +52,7 @@ function CartList(props) {
             </div>
             <div
               onClick={() => {
-                props.changeQuantity(props.data.id, -1);
+                context.changeCartQuantity(props.data.id, -1);
               }}
             >
               <svg
@@ -72,7 +74,7 @@ function CartList(props) {
           <button
             className=" text-red-600 font-semibold text-lg ms-auto"
             onClick={() => {
-              props.removeCartData(props.data.id);
+              context.deleteFromCart(props.data.id);
             }}
           >
             Remove

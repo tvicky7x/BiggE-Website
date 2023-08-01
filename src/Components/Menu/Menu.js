@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import MenuBox from "./MenuBox";
 import Container from "../UI/Container";
+import appContext from "../../appcontext";
 
-function Menu(props) {
+function Menu() {
+  const context = useContext(appContext);
   return (
     <>
       <Container id={"Menu"}>
@@ -13,15 +15,8 @@ function Menu(props) {
           We have mouthwatering delectable dishes for your taste
         </p>
         <div className="mt-4 sm:mt-6 flex flex-wrap justify-center">
-          {props.data.map((item) => {
-            return (
-              <MenuBox
-                data={item}
-                key={item.id}
-                openViewCart={props.openViewCart}
-                addCartData={props.addCartData}
-              />
-            );
+          {context.foodData.map((item) => {
+            return <MenuBox data={item} key={item.id} />;
           })}
         </div>
       </Container>

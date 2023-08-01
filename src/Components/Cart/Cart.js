@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import Overlay from "../UI/Overlay";
 import CartList from "./CartList";
+import appContext from "../../appcontext";
 
-function Cart(props) {
-  const total = props.data.reduce(function (previousValue, currentValue) {
+function Cart() {
+  const context = useContext(appContext);
+  const total = context.cardList.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue.dishPrice * currentValue.dishQuantity;
   }, 0);
   return (
     <>
       {ReactDOM.createPortal(
-        <Overlay className="flex justify-center items-center px-4 py-8 overflow-auto">
-          <div className=" bg-white sm:p-5 p-4 w-128 rounded-md drop-shadow-2xl my-auto">
+        <>
+          <Overlay className="flex justify-center items-center px-4 py-8 overflow-auto"></Overlay>
+          <div className=" bg-white sm:p-5 p-4 w-128 rounded-md drop-shadow-2xl my-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <h3 className=" text-yellow-950 text-center text-2xl font-medium relative">
               Your Cart
               <svg
@@ -30,7 +33,7 @@ function Cart(props) {
               </svg>
               <div
                 className="inline-block absolute right-0  hover:scale-110 rounded-md bg-yellow-300 transition duration-200 hover:ease-in-out cursor-pointer"
-                onClick={props.closeViewCart}
+                onClick={context.closeViewCart}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +51,7 @@ function Cart(props) {
                 </svg>
               </div>
             </h3>
-            {props.data.length === 0 && (
+            {context.cardList.length === 0 && (
               <div className="p-3 mt-5 bg-yellow-200 rounded-md text-center">
                 <h4 className="text-xl font-semibold">
                   Your Cart is Empty
@@ -69,25 +72,18 @@ function Cart(props) {
                 </h4>
                 <button
                   className="mt-4 py-2 w-40 px-4 bg-yellow-900 rounded-full font-semibold  text-yellow-50 hover:scale-105 hover:drop-shadow-xl transition-all duration-200 hover:ease-in-out"
-                  onClick={props.closeViewCart}
+                  onClick={context.closeViewCart}
                 >
                   Order Now
                 </button>
               </div>
             )}
 
-            {props.data.length > 0 && (
+            {context.cardList.length > 0 && (
               <div className="mt-5">
                 <ul className=" divide-y-2">
-                  {props.data.map((item) => {
-                    return (
-                      <CartList
-                        data={item}
-                        key={item.id}
-                        removeCartData={props.removeCartData}
-                        changeQuantity={props.changeQuantity}
-                      />
-                    );
+                  {context.cardList.map((item) => {
+                    return <CartList data={item} key={item.id} />;
                   })}
                 </ul>
                 <div className="mt-10 border-t-2 border-yellow-500">
@@ -97,7 +93,7 @@ function Cart(props) {
                   </div>
                   <button
                     className=" mt-3 py-2 px-4 font-semibold bg-yellow-900 text-yellow-50 rounded-md w-full hover:scale-105 hover:ease-in-out transition duration-200 hover:drop-shadow-2xl"
-                    onClick={props.closeViewCart}
+                    onClick={context.closeViewCart}
                   >
                     Checkout
                   </button>
@@ -105,7 +101,7 @@ function Cart(props) {
                     or{" "}
                     <span
                       className=" text-yellow-500 cursor-pointer"
-                      onClick={props.closeViewCart}
+                      onClick={context.closeViewCart}
                     >
                       Continue Shopping{" "}
                       <svg
@@ -128,7 +124,7 @@ function Cart(props) {
               </div>
             )}
           </div>
-        </Overlay>,
+        </>,
         document.getElementById("cart")
       )}
     </>
